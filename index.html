@@ -3,307 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help Karo - Premium Navbar</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>HelpKaro.com/Contact Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8fafc;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 2%;
-            background-color: #ffffff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 110, 255, 0.1);
-        }
-        
-        .nav-left, .nav-center, .nav-right {
-            display: flex;
-            align-items: center;
-        }
-        
-        .nav-left {
-            width: 25%;
-            padding-left: 15px;
-        }
-        
-        .nav-center {
-            width: 50%;
-            justify-content: center;
-        }
-        
-        .nav-right {
-            width: 25%;
-            justify-content: flex-end;
-            padding-right: 15px;
-        }
-        
-        .nav-left a {
-            text-decoration: none;
-            color: #334155;
-            font-weight: 500;
-            font-size: 0.95rem;
-            margin: 0 0.8rem;
-            padding: 0.5rem 0;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-left a:first-child {
-            margin-left: 0;
-        }
-        
-        .nav-left a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #0284c7;
-            transition: all 0.3s ease;
-            opacity: 0;
-        }
-        
-        .nav-left a:hover {
-            color: #0284c7;
-        }
-        
-        .nav-left a:hover:after {
-            width: 100%;
-            opacity: 1;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            padding: 0.3rem 1rem;
-            background-color: rgba(2, 132, 199, 0.03);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-        
-        .logo-container:hover {
-            background-color: rgba(2, 132, 199, 0.07);
-            transform: translateY(-1px);
-        }
-        
-        .logo {
-            width: 42px;
-            height: 42px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 0.8rem;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-        
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .brand-name {
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 700;
-            font-size: 1.7rem;
-            color: #334155;
-            letter-spacing: -0.2px;
-        }
-        
-        .brand-name span {
-            color: #0284c7;
-        }
-        
-        .nav-right button {
-            border: none;
-            padding: 0.65rem 1.4rem;
-            margin: 0 0.5rem;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.2px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-right button:last-child {
-            margin-right: 0;
-        }
-        
-        .btn-request {
-            color: #0284c7;
-            background-color: rgba(2, 132, 199, 0.08);
-            border: 1px solid rgba(2, 132, 199, 0.1) !important;
-        }
-        
-        .btn-request:hover {
-            background-color: rgba(2, 132, 199, 0.15);
-            transform: translateY(-2px);
-        }
-        
-        .btn-donate {
-            color: white;
-            background-color: #0284c7;
-            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
-        }
-        
-        .btn-donate:hover {
-            background-color: #0369a1;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);
-        }
-        
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 1rem 2%;
-            }
-            
-            .nav-left, .nav-center, .nav-right {
-                width: 100%;
-                justify-content: center;
-                padding: 0.5rem 0;
-            }
-            
-            .nav-left {
-                justify-content: center;
-                order: 2;
-            }
-            
-            .nav-center {
-                order: 1;
-                margin-bottom: 0.5rem;
-            }
-            
-            .nav-right {
-                justify-content: center;
-                order: 3;
-                margin-top: 0.5rem;
-            }
-            
-            .nav-left a, .nav-right button {
-                margin: 0.3rem;
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .brand-name {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-left">
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact Us</a>
-        </div>
-        
-        <div class="nav-center">
-            <div class="logo-container">
-                <div class="logo">
-                    <img src="asset/WhatsApp Image 2025-03-17 at 22.18.35.jpeg" alt="Help Karo Logo">
-                </div>
-                <span class="brand-name">Help<span>Karo</span></span>
+    <section>
+        <div class = "contact-us">
+            <div class="text-container">
+                <h2>Get In Touch With Us</h2>
+                <p>We're always here to assist you! For any further questions, feel free to check our FAQs or reach out via the provided contact details.</p>
             </div>
+            <img src = "contact image.jpg" alt="contact us">
         </div>
-        
-        <div class="nav-right">
-            <button class="btn-request">Request</button>
-            <button class="btn-donate">Donate</button>
-        </div>
-    </nav>
-    <br>
-    <div class="carousel">
-        <div class="carousel-track">
-            <img src="https://img.freepik.com/premium-photo/joyful-children-receiving-new-books-rural-school-community-outreach-program_416256-93142.jpg?w=1380" alt="Image">
-            <img src="https://img.freepik.com/premium-photo/students-receiving-their-first-textbooks-school-year_1298745-22004.jpg?w=1380" alt="Image">
-            
-            <img src="https://img.freepik.com/premium-photo/person-is-holding-cardboard-box-full-colorful-knit-hats_888418-43845.jpg?w=1380" alt="Image">
-           
-            <img src="https://img.freepik.com/premium-photo/businessman-got-fired-covid-economy-recession-taking-his-property-out-from-office-close-up_151013-8766.jpg?w=1380" alt="Image">
-            
-            <img src="https://img.freepik.com/premium-photo/joyful-children-receiving-new-books-rural-school-community-outreach-program_416256-93142.jpg?w=1380" alt="Image">
-            <img src="https://img.freepik.com/premium-photo/students-receiving-their-first-textbooks-school-year_1298745-22004.jpg?w=1380" alt="Image">
-            
-            <img src="https://img.freepik.com/premium-photo/person-is-holding-cardboard-box-full-colorful-knit-hats_888418-43845.jpg?w=1380" alt="Image">
-            <img src="https://img.freepik.com/premium-photo/businessman-got-fired-covid-economy-recession-taking-his-property-out-from-office-close-up_151013-8766.jpg?w=1380" alt="Image">
-            
-            
-        </div>
-    </div>
-    <br><br><br><br><br>
-    <div class="content2-container">
-        <img class="img-content2" src="https://www.smilefoundationindia.org/blog/wp-content/uploads/2022/11/142875012_4213934451963824_4908626115809418460_o-1024x768.jpg" alt="image" height="350px" width="120%">
-        <h2 class="content2">While millions of students in India cannot afford the books they wish to read, the clothes they need to wear, there are privileged people who have the same books and clothes lying in their shelves.
-        <br><br>
-        HelpKaro aims to bridge this gap !
-        </h2>
-    </div>
-    <br><br><br><br><br>
-    <h1 class="gap-headings"> How we bridge the Gap </h1>
-    <br>
-    <div class="card-container">
-        <div class="card">
-            <img src="https://img.freepik.com/free-photo/front-view-smiley-girl-holding-stack-books_23-2148448007.jpg?t=st=1742300061~exp=1742303661~hmac=a399972287df05718845ab0fb3d69487a91c0fdccc2dd4c0f6e93168ac28b34a&w=826" alt="Card Image 1">
-            <div class="card-content">
-                <h3>Donate and Request Books</h3>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://img.freepik.com/free-photo/smiley-man-liking-what-he-ordered-online_23-2148455122.jpg?t=st=1742300137~exp=1742303737~hmac=e6d3153e7ba4cff39e4cdab2f3a7af0cca3fef5aef0bbc4a2344b9f9e3b4b3f3&w=826" alt="Card Image 2">
-            <div class="card-content">
-                <h3>Donate and Request Clothes</h3>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://img.freepik.com/free-photo/organizer-with-supplies_23-2147654401.jpg?t=st=1742300238~exp=1742303838~hmac=babdec28cec03311caf58ebe1d410b5ad892e4a52896d8e39c7444996c38a16c&w=826" alt="Card Image 3">
-            <div class="card-content">
-                <h3>Donate and Request Stationery</h3>
-            </div>
-        </div>
-    </div>
-    <br><br><br><br><br>
-    <h1 class="gap-headings"> What our users say </h1>
-    <br>
-    <div class="review-container">
-        <div class="review-card-box">
-            <img src="https://im.whatshot.in/img/2019/Oct/goonj-quora-cropped-1-1572002984.jpg" alt="Image 1" class="review-card-image">
-            <h5 class="review-card-title">" Donating warm clothes brought joy to me and the families I helped. Their smiles were priceless. Giving truly feels amazing! "</h5>
-        </div>
-        <div class="review-card-box">
-            <img src="https://img.freepik.com/premium-photo/handsome-indian-man-images-hd_181020-4035.jpg?w=2000" alt="Image 2" class="review-card-image">
-            <h5 class="review-card-title">" Supporting underprivileged children’s education gave me a sense of pride. Even a small act can light up their lives. "</h5>
-        </div>
-        <div class="review-card-box">
-            <img src="https://static.vecteezy.com/system/resources/previews/042/586/484/non_2x/ai-generated-indian-women-saari-indian-female-teacher-portrait-photo.jpg" alt="Image 3" class="review-card-image">
-            <h5 class="review-card-title">" Offering clothes during Ganesh Chaturthi was a beautiful experience. It's humbling to help others. "</h5>
-        </div>
-    </div>
+    </section>
 
-    <script>
-        const track = document.querySelector('.carousel-track');
-        track.innerHTML += track.innerHTML; 
-    </script>
+    <section>
+        <div class="location">
+            <div class="loc-header">
+                <h3>CONTACT INFORMATION:</h3>
+                <p id="cont-desc">Here are the ways you can reach us out:</p>
+            </div>
+            <p> <i class="fa-solid fa-location-dot"> </i>Address:</p>Bhagwan Parshuram Institute of Technology, Dr. K.N. Katju Marg, Sector-17, Rohini, New Delhi - 110089 
+            <p><i class="fa-regular fa-envelope"></i>  Email:</p>customercare@helpkaro.com
+            <p><i class="fa-solid fa-phone"></i> Phone:</p>+91 0987654321, +91 1235789640
+        </div>
+    </section>
+
+    <section>
+        <div class="join-us">
+            <div class="jointext-container">
+                <h2>Connect With Us On:</h2>
+                <p>Follow us on Instagram, Facebook, and LinkedIn to stay updated on uplifting stories of our successful donation drives and campaigns!</p>
+            </div>
+            <div class="social-media">
+                <span class="social-media-item">
+                    <h5><i class="fa-brands fa-instagram" ></i> Instagram:</h5><p>@Help_Karo</p>
+                </span>
+                <span class="social-media-item">
+                    <h5><i class="fa-brands fa-x-twitter"></i> Twitter:</h5>
+                    <p>@HelpKaro</p>
+                </span>
+                <span class="social-media-item">
+                    <h5><i class="fa-brands fa-facebook"></i> Facebook:</h5>
+                    <p>@HelpKaro</p>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section>
+        <div class = "faq-container">
+            <h3>Frequently Asked Questions</h3>
+             <div class = "faq-item">
+                <div class = "faq-question">
+                    What is HelpKaro?
+                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>HelpKaro is a community-driven platform that connects donors with people in need. You can donate books, clothes, stationery, and money or request assistance if you need help.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                  How does this platform work?
+                  <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                  <p>Simply choose what you want to do—donate or request help. If you're donating, list the items or amount you'd like to contribute. If you're requesting, browse available donations or submit a request.</p>
+                </div>
+            </div>
+          
+            <div class="faq-item">
+                <div class="faq-question">
+                  What items can I donate?
+                  <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                  <p>You can donate books, clothes, stationery, and money. Please ensure items are in good condition and usable.</p>
+                </div>
+            </div>
+          
+            <div class="faq-item">
+                <div class="faq-question">
+                  Can I donate money?
+                  <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                  <p>Yes- We accept monetary donations to support individuals in need, fund community programs, provide education to those in need and improve donation logistics.</p>
+                </div>
+            </div>
+          
+            <div class="faq-item">
+                <div class="faq-question">
+                  Is my monetary donation secure?
+                  <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                  <p>Yes, we use secure payment gateways to ensure your transaction is safe. You will also receive a receipt for your contribution through your mail id.</p>
+                </div>
+            </div>
+          
+            <div class="faq-item">
+                <div class="faq-question">
+                  Do you provide pickup services for donations?
+                  <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                  <p>We offer pickup services in certain locations. Please check our service area or contact us to arrange a pickup. Or you can drop off donations at our headquarters during business hours.</p>
+                </div>
+            </div>
+          
+            <div class="faq-item">
+                <div class="faq-question">
+                  Do you accept corporate or bulk donations?
+                  <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                  <p>Yes - if your company or group wants to contribute, please contact us for special arrangements. We'll be more than happy to discuss partnership opportunities.</p>
+                </div>
+              </div>
+            </div>
+    </section>
+<script src="index.js"></script>
 </body>
 </html>
