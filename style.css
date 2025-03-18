@@ -1,0 +1,152 @@
+body{
+    font-family: "Poppins";
+}
+.carousel {
+    position: relative;
+    left: 78px;
+    width: 90vw;
+    overflow: hidden;
+    border: 3px solid #0284c7; 
+    border-radius: 15px;
+    background: #0284c7;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: breathe-out 3s ease-in-out 1;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 70s linear infinite;
+    width: calc(100% * 8);
+}
+
+.carousel img {
+    width: 100%;
+    height: 300px;
+    border-right: 3px solid #0284c7;
+}
+
+.content2-container{
+    color: #0284c7;
+    display: flex;
+    justify-content: space-between;
+    align-content:space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 10px 15px;
+}
+
+.img-content2{
+    border-radius: 15px;
+    animation: pop 3s ease-in-out 1;
+}
+
+.content2{
+    animation: pop 3s ease-in-out 1;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.card {
+    padding: 5px 5px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    overflow: hidden;
+    height:10%;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #0284c7;
+}
+
+.gap-headings{
+    color: #0284c7;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgb(168, 194, 250);
+}
+
+.review-container {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.review-card-box {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #ccc; 
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 400px;
+}
+
+.review-card-image {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.review-card-title {
+    margin: 0;
+    font-size: 18px;
+    color: #0284c7;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes breathe-out {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1); 
+        opacity: 0.5; 
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);  
+    }
+    100% {
+        transform: scale(1);
+    }
+}
