@@ -31,6 +31,48 @@
     </section>
 
     <section>
+      <div class="enquiry-form-container">
+        <h2><i class="fas fa-paper-plane"></i> Send us an Enquiry</h2>
+        <form id="enquiryForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+            <div class="form-error">Please enter your name</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
+            <div class="form-error">Please enter a valid email address</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-control" placeholder="What is your enquiry about?" required>
+            <div class="form-error">Please enter a subject</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Type your message here..." required></textarea>
+            <div class="form-error">Please enter your message</div>
+          </div>
+          
+          <button type="submit" class="submit-btn" id="submitButton">
+            Submit Enquiry
+          </button>
+        </form>
+        
+        <div class="success-message" id="successMessage">
+          <i class="fas fa-check-circle"></i>
+          <h3>Thank You!</h3>
+          <p>Your enquiry has been submitted successfully. We'll get back to you soon.</p>
+          <button id="sendAnotherBtn">Send Another Enquiry</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
         <div class="join-us">
             <div class="jointext-container">
                 <h2>Connect With Us On:</h2>
