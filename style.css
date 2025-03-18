@@ -41,7 +41,7 @@ body{
 }
 
 .content2{
-    animation: pop 3s ease-in-out 1;
+    animation: slide-down 3s ease-out;
 }
 
 .card-container {
@@ -148,5 +148,16 @@ body{
     }
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%); /* Start above the viewport */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Final position */
+        opacity: 1;
     }
 }
