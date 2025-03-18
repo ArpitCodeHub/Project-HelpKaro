@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            text-align: center;
+            padding: 20px;
+        }
+        .container{
+            background-color: #f8fafc;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            gap: 20px;
+        }
+        .content{
+            width: 50%;
+            text-align: left;
+        }
+        .form{
+            width: 50%;
+            padding: 20px;
+            border-radius: 7px;
+            background:blue;
+        }
+        .content>img{
+            width: 100%;
+            border-radius: 8px;
+        }
+        input{
+            width: 90%;
+            padding: 10px;
+            margin: 10px ;
+            border-radius: 5px;
+            border: 1px solid grey;
+
+        }
+        button{
+            cursor: pointer;
+            width: 50%;
+            padding: 10px;
+            margin: 10px ;
+            border-radius: 5px;
+            border: 1px solid grey;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1><img src="" alt="">HelpKaro</h1>
+            <h2>Donate Us</h2>
+            <p><i>Donate us for a Better Tomorrow !!</i></p>
+            <img src="" alt="Charity Image">
+            <p>The season of giving and thinking of others is never-ending. Why not give this charity a chance now?</p>
+        </div>
+        <div class="form">
+            <h3>Payment Details</h3>
+            <form id="donationForm">
+                <input type="number" id="amount" placeholder="₹ Enter Amount" >
+                <input type="text" id="pan" placeholder="PAN Number" >
+                <input type="email" id="email" placeholder="Email" >
+                <input type="tel" id="mobile" placeholder="Mobile" >
+                <input type="text" id="company" placeholder="Company (Optional)">
+                <button type="submit">Donate ₹ <span id="donationAmount">0</span></button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById("donationForm").addEventListener("input", ()=>{
+            let amount = document.getElementById("amount").value ;
+            if(amount>100000){
+                alert(`for donating ${amount} contact authorities`);
+                amount=0;
+            }
+            document.getElementById("donationAmount").innerText = amount;
+        });
+    </script>
+</body>
+</html>
