@@ -1,224 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 body{
-    background-color: #ffffff;
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
-    display: flex;
+    font-family: "Poppins";
+}
+.carousel {
+    position: relative;
+    left: 78px;
+    width: 90vw;
+    overflow: hidden;
+    border: 3px solid #0284c7; 
+    border-radius: 15px;
+    background: #0284c7;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: breathe-out 3s ease-in-out 1;
 }
 
-.contact-us{
-    background-color: #0284c7;
+.carousel-track {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    animation: scroll 70s linear infinite;
+    width: calc(100% * 8);
+}
+
+.carousel img {
     width: 100%;
-    padding: 3rem 0;
+    height: 300px;
+    border-right: 3px solid #0284c7;
 }
 
-.text-container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 40px;
-    padding: 0 40px;
-}
-
-.contact-us img{
-    width: 25%;
-    height: auto;
-    padding: 0;
-    margin-right: 150px;
-}
-
-.contact-us h2{
-    font-size: 3rem;
-    color: #FFF8E7;
-    margin-bottom: 10px;
-    font-weight:700;
-}
-
-
-.contact-us p {
-    font-size: 1.7rem;
-    max-width: 700px;
-    color: #FFF8E7
-}
-
-.location{
-    font-size: 1.4em;
-    font-family:"Poppins", sans-serif;
-    display: flex;
-    flex-direction: column;
-    padding: 50px 20px;
-    margin-bottom: 20px;
-}
-
-.loc-header{
-    font-size: 1.7rem;
+.content2-container{
     color: #0284c7;
-    margin-bottom: 10px;
-}
- 
-.loc-header p{
-    font-size: 1rem;
-    padding: 0;
-    font-weight: 450;
-    color: black;
-}
-
-.fa-solid {
-    margin-right: 10px;
-}
-
-.fa-location-dot {
-    color: #0284c7;
-}
-
-.fa-envelope {
-    color: #0284c7;
-}
-
-.fa-phone {
-    color: #0284c7;
-}
-
-.join-us{
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    width: 75%;
-    border-radius: 10px;
-    padding: auto;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    margin-bottom: 30px;
-    padding-top: 10px;
-    margin-top: -40px;
-}
-
-.jointext-container{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 0;
-    padding: 10px;
-}
-
-.jointext-container h2{
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #0284c7;
-}
-
-.social-media{
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: center;
-    gap: 10px;
-    margin-left: 30px;
-    margin-bottom: 10px;
-}
-
-.social-media-item{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.2rem;
-    color: #0284c7;
-    font-weight: bold;
-
-}
-
-.social-media p{
-    font-size: 1rem;
-    margin: 0;
-    font-weight: normal;
-    color: rgb(24, 21, 21);
-}
-
-.fa-brands {
-    color: var(--primary);
-  }
-
-.social-media h5{
-    font-size: 1.2rem;
-    margin: 0;
-    padding: 0;
-    margin-right: 10px;
-    flex-direction: column;
-    color: black;
-}
-
-.social-media h5 i{
-    color:black;
-    font-size: 1.5rem;
-}
-
-.faq-container {
-    max-width: 80rem;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-.faq-container h3 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    color: #0284c7;
-    text-align: center;
-}
-
-.faq-item {
-    margin-bottom: 1rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: white;
-    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2);
-}
-
-.faq-question {
-    padding: 1rem;
-    background-color: white;
-    cursor: pointer;
     display: flex;
     justify-content: space-between;
+    align-content:space-between;
     align-items: center;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    gap: 30px;
+    padding: 10px 15px;
 }
 
-.faq-question:hover {
-    background-color: #0284c7 ;
-    color: white;
+.img-content2{
+    border-radius: 15px;
+    animation: pop 3s ease-in-out 1;
 }
 
-.faq-question.active {
-    background-color: #0284c7;
-    color: white;
+.content2{
+    animation: slide-down 3s ease-out;
 }
 
-.faq-answer {
-    padding: 0;
-    max-height: 5px;
+.card-container {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.card {
+    padding: 5px 5px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+    height:10%;
 }
 
-.faq-answer.active {
-    padding: 1rem;
-    max-height: 300px;
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
-.toggle-icon {
-    transition: transform 0.3s;
+.card-content {
+    padding: 15px;
 }
 
-.faq-question.active .toggle-icon {
-    transform: rotate(180deg);
+.card-content h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #0284c7;
 }
 
-  
+.gap-headings{
+    color: #0284c7;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgb(168, 194, 250);
+}
+
+.review-container {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.review-card-box {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #ccc; 
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 400px;
+}
+
+.review-card-image {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.review-card-title {
+    margin: 0;
+    font-size: 18px;
+    color: #0284c7;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes breathe-out {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1); 
+        opacity: 0.5; 
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);  
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%); /* Start above the viewport */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Final position */
+        opacity: 1;
+    }
+}
