@@ -6,29 +6,51 @@
     <title>Document</title>
     <style>
         body {
+           
             font-family: 'Poppins', sans-serif;
-            background-color: #f8fafc;
+            background-color: #0284c7;
+
             text-align: center;
             padding: 20px;
         }
         .container{
-            background-color: #f8fafc;
+            
+            background-color: #e0e7ed;
             max-width: 800px;
             margin: auto;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 30px;
             display: flex;
+            flex-direction: column;
             gap: 20px;
+            align-self: auto;
         }
         .content{
             width: 50%;
             text-align: left;
         }
+        .form-group{
+            background-color: #f9f5f5; 
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+
+        }
+        
         .form{
-            width: 50%;
-            padding: 20px;
-            border-radius: 7px;
-            background:blue;
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: #e5cdcd;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(16, 1, 1, 0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+
+        }
+        #donationform{
+            width: 10px;
         }
         .content>img{
             width: 100%;
@@ -65,18 +87,33 @@
             <img src="" alt="Charity Image">
             <p>The season of giving and thinking of others is never-ending. Why not give this charity a chance now?</p>
         </div>
+        </div>
         <div class="form">
             <h3>Payment Details</h3>
-            <form id="donationForm">
-                <input type="number" id="amount" placeholder="₹ Enter Amount" >
-                <input type="text" id="pan" placeholder="PAN Number" >
-                <input type="email" id="email" placeholder="Email" >
-                <input type="tel" id="mobile" placeholder="Mobile" >
-                <input type="text" id="company" placeholder="Company (Optional)">
-                <button type="submit">Donate ₹ <span id="donationAmount">0</span></button>
-            </form>
         </div>
-    </div>
+            <form id="donationForm">
+             <div class="form-group">
+                <input type="number" id="amount" placeholder="₹ Enter Amount" >
+             </div>
+             <div class="form-group">
+                <input type="text" id="pan" placeholder="PAN Number" >
+            </div>
+            <div class="form-group">
+            
+                <input type="email" id="email" placeholder="Email" >
+            </div>
+            <div class="form-group">
+                <input type="tel" id="mobile" placeholder="Mobile" >
+            </div>
+            <div class="form-group">
+
+                <input type="text" id="company" placeholder="Company (Optional)">
+            </div>
+           
+                <button type="submit">Donate ₹ <span id="donationAmount">0</span></button>
+            
+            </form>
+
     <script>
         document.getElementById("donationForm").addEventListener("input", ()=>{
             let amount = document.getElementById("amount").value ;
