@@ -11,6 +11,7 @@ body{
     background: #0284c7;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     animation: breathe-out 3s ease-in-out 1;
+
 }
 
 .carousel-track {
@@ -33,6 +34,7 @@ body{
     align-items: center;
     gap: 30px;
     padding: 10px 15px;
+    flex-wrap: wrap;
 }
 
 .img-content2{
@@ -47,6 +49,7 @@ body{
 .card-container {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 
 }
 
@@ -88,6 +91,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-content: center;
+    flex-wrap: wrap;
 }
 
 .review-card-box {
@@ -159,5 +163,15 @@ body{
     100% {
         transform: translateY(0); /* Final position */
         opacity: 1;
+    }
+}
+@media (max-width:450px){
+    .carousel{
+        left:40px;
+        width:85vw;
+    }
+    .img-content2{
+        height: 230px;
+        width: 95%;
     }
 }

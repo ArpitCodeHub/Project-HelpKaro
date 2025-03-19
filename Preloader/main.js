@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
             preloader.remove();
-            window.location.href = "home.html"; // Change to your actual home page
+            window.location.href = "home.html"; 
         }, 1000);
     }, 3000);
 });
