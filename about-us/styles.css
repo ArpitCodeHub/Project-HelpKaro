@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fff;
+}
+
+/* About Section */
+.about-section {
+  padding: 70px 12%;
+  min-height: 100vh;
+}
+
+/* Main Heading */
+.section-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #004d7a;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Introduction */
+.intro-text {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 60px;
+  color: #34495e;
+}
+
+/* Content Box */
+.content-box {
+  padding: 30px 40px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  border-left: 6px solid #3498db;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.content-box:hover {
+  transform: translateY(-8px);
+}
+
+/* Soothing Background Colors for Each Section */
+.mission {
+  background-color: #d4edda; /* Light Green */
+}
+
+.what-we-do {
+  background-color: #fff5cc; /* Light Yellow */
+}
+
+.why-choose-us {
+  background-color: #d6eaf8; /* Light Sky Blue */
+}
+
+.vision {
+  background-color: #f9e7e7; /* Light Pink */
+}
+
+.content-box h2 {
+  color: #007acc;
+  margin-bottom: 20px;
+}
+
+.content-box p,
+.content-box ul {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.content-box ul {
+  padding-left: 25px;
+}
+
+.highlight {
+  color: #0284c7;
+  font-weight: 500;
+}
+
+/* Final Text */
+.final-text {
+  font-size: 1.8rem;
+  color: #ffd700;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+/* Footer */
+.footer {
+  background-color: #0284c7;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+}
+
+/* For Mobile View */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 5%;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .content-box {
+    padding: 20px;
+  }
+
+  .final-text {
+    font-size: 1.4rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body Background */
+body {
+  background-color: #ffff; /* Light Blue */
+}
+
+/* About Section */
+.about-section {
+  padding: 60px 10%;
+  min-height: 100vh;
+}
+
+/* Main Heading */
+.section-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #007acc;
+  margin-bottom: 50px;
+}
+
+/* Introduction */
+.intro-text {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 60px;
+  color: #34495e;
+}
+
+/* Content Boxes */
+.content-box {
+  padding: 30px 40px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+.content-box:hover {
+  transform: scale(1.03);
+}
+
+/* Background Colors for Each Section */
+.impact {
+  background-color: #d4edda; /* Light Green */
+}
+
+.donations {
+  background-color: #fff5cc; /* Light Yellow */
+}
+
+.why-us {
+  background-color: #d6eaf8; /* Light Sky Blue */
+}
+
+/* Highlighted Text */
+.highlight {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+/* Final Text */
+.final-text {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #004d7a;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+/* Footer */
+/* .footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+  } */
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.image-container {
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  margin: 25px;
+  overflow: hidden; /* Ensures no overflow */
+}
+
+.image-container img {
+  width: 100%;
+  height: 200px;
+  padding: 8px;
+  margin: 2px;
+  object-fit: contain; /* Ensures the entire image fits without cropping */
+  border-radius: 20px;
+  background-color: #d6eaf8; /* Adds a background if images don't fill space */
+}
+
+.image-text {
+  width: 80%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  margin: 5px;
+  border-radius: 6px;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  color: #333;
+}
+
+/* Story Card Container */
+.stories-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Story Card Styles */
+.story-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.story-card:hover {
+  transform: scale(1.05);
+}
+
+.story-card h2 {
+  color: #ff6600;
+  font-size: 20px;
+}
+
+.story-card p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 5%;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .content-box {
+    padding: 20px;
+  }
+
+  .final-text {
+    font-size: 1.2rem;
+  }
+}
