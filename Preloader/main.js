@@ -1,14 +1,15 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
 
-    preloader.style.display = "flex";  
+    preloader.style.display = "flex";
+    preloader.classList.remove("fly-out");
 
     setTimeout(() => {
         preloader.classList.add('fly-out');
 
         setTimeout(() => {
-            preloader.remove();
-            window.location.href = "home.html"; 
-        }, 1000);
-    }, 3000);
+            preloader.style.display = "none";
+            window.location.href = "../home.html";
+        }, 2000);
+    }, 4000);
 });
