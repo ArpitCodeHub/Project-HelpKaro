@@ -6,8 +6,259 @@
     <title>About Us - DonateEase</title>
     <link rel="stylesheet" href="about.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      
+      body {
+          font-family: 'Poppins', sans-serif;
+          background-color: #f8fafc;
+      }
+      
+      .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1.2rem 2%;
+          background-color: #ffffff;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+          border-bottom: 1px solid rgba(0, 110, 255, 0.1);
+      }
+      
+      .nav-left, .nav-center, .nav-right {
+          display: flex;
+          align-items: center;
+      }
+      
+      .nav-left {
+          width: 25%;
+          padding-left: 15px;
+      }
+      
+      .nav-center {
+          width: 50%;
+          justify-content: center;
+      }
+      
+      .nav-right {
+          width: 25%;
+          justify-content: flex-end;
+          padding-right: 15px;
+      }
+      
+      .nav-left a {
+          text-decoration: none;
+          color: #334155;
+          font-weight: 500;
+          font-size: 0.95rem;
+          margin: 0 0.8rem;
+          padding: 0.5rem 0;
+          transition: all 0.3s ease;
+          position: relative;
+      }
+      
+      .nav-left a:first-child {
+          margin-left: 0;
+      }
+      
+      .nav-left a:after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: #0284c7;
+          transition: all 0.3s ease;
+          opacity: 0;
+      }
+      
+      .nav-left a:hover {
+          color: #0284c7;
+      }
+      
+      .nav-left a:hover:after {
+          width: 100%;
+          opacity: 1;
+      }
+      
+      .logo-container {
+          display: flex;
+          align-items: center;
+          padding: 0.3rem 1rem;
+          background-color: rgba(2, 132, 199, 0.03);
+          border-radius: 12px;
+          transition: all 0.3s ease;
+      }
+      
+      .logo-container:hover {
+          background-color: rgba(2, 132, 199, 0.07);
+          transform: translateY(-1px);
+      }
+      
+      .logo {
+          width: 42px;
+          height: 42px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 0.8rem;
+          overflow: hidden;
+          border-radius: 8px;
+      }
+      
+      .logo img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+      
+      .brand-name {
+          font-family: 'Quicksand', sans-serif;
+          font-weight: 700;
+          font-size: 1.7rem;
+          color: #334155;
+          letter-spacing: -0.2px;
+      }
+      
+      .brand-name span {
+          color: #0284c7;
+      }
+      
+      .nav-right button {
+          border: none;
+          padding: 0.65rem 1.4rem;
+          margin: 0 0.5rem;
+          font-weight: 600;
+          font-size: 0.85rem;
+          letter-spacing: 0.2px;
+          border-radius: 30px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+      }
+      
+      .nav-right button:last-child {
+          margin-right: 0;
+      }
+      
+      .btn-request {
+          color: #0284c7;
+          background-color: rgba(2, 132, 199, 0.08);
+          border: 1px solid rgba(2, 132, 199, 0.1) !important;
+      }
+      
+      .btn-request:hover {
+          background-color: rgba(2, 132, 199, 0.15);
+          transform: translateY(-2px);
+      }
+      
+      .btn-donate {
+          color: white;
+          background-color: #0284c7;
+          box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+      }
+      
+      .btn-donate:hover {
+          background-color: #0369a1;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);
+      }
+      
+      @media (max-width: 768px) {
+          .navbar {
+              flex-direction: column;
+              padding: 1rem 2%;
+          }
+          
+          .nav-left, .nav-center, .nav-right {
+              width: 100%;
+              justify-content: center;
+              padding: 0.5rem 0;
+          }
+          
+          .nav-left {
+              justify-content: center;
+              order: 2;
+          }
+          
+          .nav-center {
+              order: 1;
+              margin-bottom: 0.5rem;
+          }
+          
+          .nav-right {
+              justify-content: center;
+              order: 3;
+              margin-top: 0.5rem;
+          }
+          
+          .nav-left a, .nav-right button {
+              margin: 0.3rem;
+              padding: 0.5rem 1rem;
+              font-size: 0.8rem;
+          }
+          
+          .brand-name {
+              font-size: 1.5rem;
+          }
+      }
+  </style>
+  <style> 
+      .footer {
+          background-color:  #0284c7;
+          color: white;
+          text-align: center;
+          padding: 1rem 0;
+          margin-top: 20px;
+      }
+      
+      .footer-container {
+          max-width: 1200px;
+          margin: auto;
+      }
+      
+      .social-links a {
+          color: #ffffff;
+          margin: 0 10px;
+          text-decoration: none;
+          font-size: 1.5rem;
+      }
+      
+      .social-links a:hover {
+          color: #ffd700;
+      }
+      </style>
   </head>
   <body>
+    <nav class="navbar">
+      <div class="nav-left">
+          <a href="about-us/about.html">About Us</a>
+          <a href="contact-me/contact.html">Contact Us</a>
+      </div>
+      
+      <div class="nav-center">
+          <div class="logo-container">
+              <div class="logo">
+                  <img src="asset/WhatsApp Image 2025-03-17 at 22.18.35.jpeg" alt="Help Karo Logo">
+              </div>
+              <span class="brand-name">Help<span>Karo</span></span>
+          </div>
+      </div>
+      
+      <div class="nav-right">
+          <button class="btn-request" onclick="location.href='request.html';">Request</button>
+          <button class="btn-donate" onclick="openNewPage()" >Donate</button>
+      </div>
+  </nav>
+  <br>
+
     <!-- About Us Section -->
     <section class="about-section">
       <div class="container">
@@ -333,7 +584,16 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 2025 HelpKaro | All Rights Reserved</p>
-    </footer>
+      <div class="footer-container">
+          <p>&copy; 2025 Help Karo. All rights reserved.</p>
+          <div class="social-links">
+              <a href="https://www.google.com" target="_blank"><i class="fab fa-google"></i></a>
+              <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
+      </div>
+  </footer>
   </body>
 </html>
