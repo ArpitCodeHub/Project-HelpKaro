@@ -448,7 +448,7 @@
       </div>
     </div>
     <div class="nav-right">
-      <button class="btn-request" onclick="location.href='request.html';">Request</button>
+      <button class="btn-request" onclick="location.href='home.html';">Request</button>
       <button class="btn-donate" onclick="openNewPage()">Donate</button>
     </div>
   </nav>
@@ -457,7 +457,7 @@
   <div class="container">
     <div class="header">
       <h1>HelpKaro</h1>
-      <p>Donate Now for a Better Tomorrow !</p>
+      <p>Request something that can really impact your life ! </p>
     </div>
     
     <div id="main-page">
@@ -465,36 +465,34 @@
         <div class="card" onclick="showForm('clothes')">
           <img src="asset/clothes.webp" alt="Donate Clothes">
           <div class="card-content">
-            <h3>Donate Clothes</h3>
-            <p>Your old clothes can bring new smiles. Donate clothes to the needy </p>
-            <button>Donate Clothes</button>
+            <h3>Request Clothes</h3>
+            <!-- <p>Your old clothes can bring new smiles. Donate clothes to the needy </p> -->
+            <button>Request Clothes</button>
           </div>
         </div>
         
         <div class="card" onclick="showForm('food')">
           <img src="asset/donationpage.webp" alt="Donate Food">
           <div class="card-content">
-            <h3>Donate Food</h3>
-            <p>Help us fight hunger by contributing to our food donation program </p>
-            <button>Donate for Food</button>
+            <h3>Request Food</h3>
+            <!-- <p>Help us fight hunger by contributing to our food donation program </p> -->
+            <button>Request Food</button>
           </div>
         </div>
         
         <div class="card" onclick="showForm('books')">
           <img src="asset/books.webp" alt="Donate Books">
           <div class="card-content">
-            <h3>Donate Books</h3>
-            <p>Share knowledge by donating books for underprivileged students </p>
-            <button>Donate Books</button>
+            <h3> Request Books</h3>
+            <button>Request Books</button>
           </div>
         </div>
         
         <div class="card" onclick="showForm('money')">
           <img src="asset/money.webp" alt="Donate Money">
           <div class="card-content">
-            <h3>Donate Money</h3>
-            <p>Make a financial contribution to support our charitable initiatives </p>
-            <button>Donate Money</button>
+            <h3>Request Funds</h3>
+            <button>Request Funds</button>
           </div>
         </div>
       </div>
@@ -505,11 +503,11 @@
       <div class="content-wrapper">
         <div class="content">
           <img src="asset/clothes.webp" alt="Donate Clothes">
-          <p>Your gently used clothes can make a huge difference in someone's life. We collect and distribute clothes to those in need throughout the year.</p>
+          <p>Request for clothes </p>
         </div>
         
         <div class="form-container">
-          <h3>Clothes Donation Details</h3>
+          <h3>Clothes Request Details</h3>
           <form id="clothesForm">
             <div class="form-group">
               <input type="text" id="clothesName" placeholder="Your Name" required>
@@ -521,18 +519,18 @@
               <input type="tel" id="clothesMobile" placeholder="Mobile" required>
             </div>
             <div class="form-group">
-              <textarea id="clothesAddress" placeholder="Pickup Address" rows="3" required></textarea>
+              <textarea id="clothesAddress" placeholder="Drop Address" rows="3" required></textarea>
             </div>
             <div class="form-group">
               <input type="text" id="clothesItems" placeholder="Items Description (e.g., 5 shirts, 3 pants)" required>
             </div>
-            <div class="file-upload-btn" onclick="simulateFileUpload('clothes')">
+            <!-- <div class="file-upload-btn" onclick="simulateFileUpload('clothes')">
               <p>Click to upload photo of clothes</p>
-            </div>
-            <div id="clothes-upload-info" class="uploaded-file">
+            </div> -->
+            <!-- <div id="clothes-upload-info" class="uploaded-file">
               <p>File uploaded: clothes_donation.jpg</p>
-            </div>
-            <button type="submit">Schedule Pickup</button>
+            </div> -->
+            <button type="submit">Schedule Drop</button>
           </form>
         </div>
       </div>
@@ -543,14 +541,14 @@
       <div class="content-wrapper">
         <div class="content">
           <img src="asset/donationpage.webp" alt="Donate Food">
-          <p>Your contribution will help us provide nutritious meals to children and families facing food insecurity.</p>
+          <p>If you or someone you know is in need of a meal, we're here to help. No one should go to bed hungry</p>
         </div>
         
         <div class="form-container">
-          <h3>Food Donation Details</h3>
+          <h3>Food Collection Details</h3>
           <form id="foodForm">
             <div class="form-group">
-              <input type="number" id="foodAmount" placeholder="₹ Enter Amount" required>
+              <input type="number" min="1" id="foodAmount" placeholder="For how many people" required>
             </div>
             <div class="form-group">
               <input type="text" id="foodName" placeholder="Your Name" required>
@@ -564,13 +562,13 @@
             <div class="form-group">
               <textarea id="foodMessage" placeholder="Message (Optional)" rows="2"></textarea>
             </div>
-            <button type="submit">Donate ₹ <span id="foodDonationAmount">0</span></button>
+            <!-- <button type="submit">Donate ₹ <span id="foodDonationAmount">0</span></button> -->
           </form>
           
-          <div class="qr-code">
+          <!-- <div class="qr-code">
             <img src="asset/upi.jpg" alt="QR Code">
             <p>Scan to donate directly</p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -580,11 +578,11 @@
       <div class="content-wrapper">
         <div class="content">
           <img src="asset/books.webp" alt="Donate Books">
-          <p>Your book donations help us create libraries in underprivileged schools and communities, empowering through education.</p>
+          <!-- <p>Your book donations help us create libraries in underprivileged schools and communities, empowering through education.</p> -->
         </div>
         
         <div class="form-container">
-          <h3>Books Donation Details</h3>
+          <h3>Books Request Details</h3>
           <form id="booksForm">
             <div class="form-group">
               <input type="text" id="booksName" placeholder="Your Name" required>
@@ -596,18 +594,18 @@
               <input type="tel" id="booksMobile" placeholder="Mobile" required>
             </div>
             <div class="form-group">
-              <textarea id="booksAddress" placeholder="Pickup Address" rows="3" required></textarea>
+              <textarea id="booksAddress" placeholder="Drop Address" rows="3" required></textarea>
             </div>
             <div class="form-group">
               <input type="text" id="booksItems" placeholder="Books Description (e.g., 10 textbooks, 5 novels)" required>
             </div>
-            <div class="file-upload-btn" onclick="simulateFileUpload('books')">
+            <!-- <div class="file-upload-btn" onclick="simulateFileUpload('books')">
               <p>Click to upload photo of books</p>
-            </div>
-            <div id="books-upload-info" class="uploaded-file">
+            </div> -->
+            <!-- <div id="books-upload-info" class="uploaded-file">
               <p>File uploaded: books_donation.jpg</p>
-            </div>
-            <button type="submit">Schedule Pickup</button>
+            </div> -->
+            <button type="submit">Schedule Drop</button>
           </form>
         </div>
       </div>
@@ -618,14 +616,14 @@
       <div class="content-wrapper">
         <div class="content">
           <img src="asset/money.webp" alt="Charity Image">
-          <p>The season of giving and thinking of others is never-ending. Why not give this charity a chance now?</p>
+          <!-- <p>The season of giving and thinking of others is never-ending. Why not give this charity a chance now?</p> -->
         </div>
         
         <div class="form-container">
           <h3>Payment Details</h3>
           <form id="donationForm">
             <div class="form-group">
-              <input type="number" id="amount" placeholder="₹ Enter Amount" required>
+              <input type="number" id="amount" placeholder="Enter Amount Required" required>
             </div>
             <div class="form-group">
               <input type="text" id="pan" placeholder="PAN Number" required>
@@ -637,24 +635,24 @@
               <input type="tel" id="mobile" placeholder="Mobile" required>
             </div>
             <div class="form-group">
-              <input type="text" id="company" placeholder="Company (Optional)">
+              <input type="text" id="company" placeholder="Please enter a valid reason" required>
             </div>
-            <button type="submit">Donate ₹ <span id="donationAmount">0</span></button>
+            <button type="submit">Request</button>
           </form>
           
-          <div class="qr-code">
+          <!-- <div class="qr-code">
             <img src="asset/upi.jpg" alt="QR Code">
             <p>Scan to donate directly</p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
     
     <div id="thank-you-page" class="thank-you">
-      <h2>Thank You for Your Donation!</h2>
-      <p id="thank-you-message">Your contribution will help us make a difference.</p>
+      <h2>Thank You, we'll contact you as soon as possible!</h2>
+      <!-- <p id="thank-you-message">Your contribution will help us make a difference.</p> -->
       <p>A confirmation email has been sent to <span id="userEmail"></span>.</p>
-      <button onclick="returnToForm()" style="max-width: 200px; margin: 20px auto;">Make Another Donation</button>
+      <button onclick="returnToForm()" style="max-width: 200px; margin: 20px auto;">Make Another Request</button>
     </div>
   </div>
 
@@ -769,5 +767,6 @@
       window.scrollTo(0, document.querySelector(".container").offsetTop);
     }
   </script>
+  
 </body>
 </html>
