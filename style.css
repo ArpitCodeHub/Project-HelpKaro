@@ -176,4 +176,10 @@ body{
         height: 230px;
         width: 95%;
     }
+    .card-container{
+        gap: 15px;
+    }
+    .review-container{
+        gap: 15px;
+    }
 }
