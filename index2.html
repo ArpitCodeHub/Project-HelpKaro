@@ -30,16 +30,74 @@
             background-color: #f9f9f9;
             border-bottom: 1px solid #eee;
             text-align: center;
+            animation: fadeIn 1s ease;
         }
         
         .header h1 {
             color: #333;
             margin-bottom: 5px;
         }
+
+        .donation-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            animation: slideIn 1s ease;
+        }
+
+        .card {
+            width: 300px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #45a049;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .card button {
+            background-color: #45a049;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+        }
         
         .content-wrapper {
             display: flex;
             flex-wrap: wrap;
+            animation: fadeIn 1s ease;
         }
         
         .content {
@@ -65,17 +123,26 @@
             padding: 10px;
             margin-bottom: 15px;
             border-radius: 5px;
+            transition: transform 0.3s ease;
         }
         
-        input {
+        .form-group:focus-within {
+            transform: scale(1.02);
+        }
+        
+        input, textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
         }
+
+        input:focus, textarea:focus {
+            outline: 2px solid #45a049;
+        }
         
         button {
-            background-color: #4CAF50;
+            background-color: #45a049;
             color: white;
             padding: 12px;
             border: none;
@@ -84,10 +151,16 @@
             cursor: pointer;
             font-size: 16px;
             margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         
         button:hover {
-            background-color: #45a049;
+            background-color: #3d8b41;
+            transform: scale(1.02);
+        }
+
+        button:active {
+            transform: scale(0.98);
         }
         
         .qr-code {
@@ -108,10 +181,62 @@
             display: none;
             text-align: center;
             padding: 40px;
+            animation: bounceIn 0.8s ease;
         }
         
         .thank-you h2 {
             color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .clothes-form, .food-form, .books-form, .money-form {
+            display: none;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .file-upload-btn {
+            background-color: #f0f0f0;
+            border: 1px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .file-upload-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .uploaded-file {
+            display: none;
+            padding: 10px;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+            margin-top: 10px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            70% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .back-btn {
+            background-color: #666;
+            max-width: 100px;
             margin-bottom: 15px;
         }
     </style>
@@ -123,10 +248,164 @@
             <p>Donate us for a Better Tomorrow !!</p>
         </div>
         
-        <div id="donation-page">
+        <div id="main-page">
+            <div class="donation-cards">
+                <div class="card" onclick="showForm('clothes')">
+                    <img src="asset/clothes.webp" alt="Donate Clothes">
+                    <div class="card-content">
+                        <h3>Donate Clothes</h3>
+                        <p>Your old clothes can bring new smiles. Donate gently used clothes for those in need.</p>
+                        <button>Donate Clothes</button>
+                    </div>
+                </div>
+                
+                <div class="card" onclick="showForm('food')">
+                    <img src="asset/donationpage.webp" alt="Donate Food">
+                    <div class="card-content">
+                        <h3>Donate Food</h3>
+                        <p>Help us fight hunger by contributing to our food donation program.</p>
+                        <button>Donate for Food</button>
+                    </div>
+                </div>
+                
+                <div class="card" onclick="showForm('books')">
+                    <img src="asset/books.webp" alt="Donate Books">
+                    <div class="card-content">
+                        <h3>Donate Books</h3>
+                        <p>Share knowledge by donating books for underprivileged students.</p>
+                        <button>Donate Books</button>
+                    </div>
+                </div>
+                
+                <div class="card" onclick="showForm('money')">
+                    <img src="asset/money.webp" alt="Donate Money">
+                    <div class="card-content">
+                        <h3>Donate Money</h3>
+                        <p>Make a financial contribution to support our various charitable initiatives.</p>
+                        <button>Donate Money</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="clothes-form" class="clothes-form">
+            <button class="back-btn" onclick="showMainPage()">Back</button>
             <div class="content-wrapper">
                 <div class="content">
-                    <img src="asset/donationpage.webp" alt="Charity Image">
+                    <img src="asset/clothes.webp" alt="Donate Clothes">
+                    <p>Your gently used clothes can make a huge difference in someone's life. We collect and distribute clothes to those in need throughout the year.</p>
+                </div>
+                
+                <div class="form-container">
+                    <h3>Clothes Donation Details</h3>
+                    <form id="clothesForm">
+                        <div class="form-group">
+                            <input type="text" id="clothesName" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="clothesEmail" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="clothesMobile" placeholder="Mobile" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="clothesAddress" placeholder="Pickup Address" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="clothesItems" placeholder="Items Description (e.g., 5 shirts, 3 pants)" required>
+                        </div>
+                        <div class="file-upload-btn" onclick="simulateFileUpload('clothes')">
+                            <p>Click to upload photo of clothes</p>
+                        </div>
+                        <div id="clothes-upload-info" class="uploaded-file">
+                            <p>File uploaded: clothes_donation.jpg</p>
+                        </div>
+                        <button type="submit">Schedule Pickup</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div id="food-form" class="food-form">
+            <button class="back-btn" onclick="showMainPage()">Back</button>
+            <div class="content-wrapper">
+                <div class="content">
+                    <img src="asset/donationpage.webp" alt="Donate Food">
+                    <p>Your contribution will help us provide nutritious meals to children and families facing food insecurity.</p>
+                </div>
+                
+                <div class="form-container">
+                    <h3>Food Donation Details</h3>
+                    <form id="foodForm">
+                        <div class="form-group">
+                            <input type="number" id="foodAmount" placeholder="₹ Enter Amount" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="foodName" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="foodEmail" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="foodMobile" placeholder="Mobile" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="foodMessage" placeholder="Message (Optional)" rows="2"></textarea>
+                        </div>
+                        <button type="submit">Donate ₹ <span id="foodDonationAmount">0</span></button>
+                    </form>
+                    
+                    <div class="qr-code">
+                        <img src="asset/upi.jpg" alt="QR Code">
+                        <p>Scan to donate directly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="books-form" class="books-form">
+            <button class="back-btn" onclick="showMainPage()">Back</button>
+            <div class="content-wrapper">
+                <div class="content">
+                    <img src="asset/books.webp" alt="Donate Books">
+                    <p>Your book donations help us create libraries in underprivileged schools and communities, empowering through education.</p>
+                </div>
+                
+                <div class="form-container">
+                    <h3>Books Donation Details</h3>
+                    <form id="booksForm">
+                        <div class="form-group">
+                            <input type="text" id="booksName" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="booksEmail" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="booksMobile" placeholder="Mobile" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="booksAddress" placeholder="Pickup Address" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="booksItems" placeholder="Books Description (e.g., 10 textbooks, 5 novels)" required>
+                        </div>
+                        <div class="file-upload-btn" onclick="simulateFileUpload('books')">
+                            <p>Click to upload photo of books</p>
+                        </div>
+                        <div id="books-upload-info" class="uploaded-file">
+                            <p>File uploaded: books_donation.jpg</p>
+                        </div>
+                        <button type="submit">Schedule Pickup</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div id="money-form" class="money-form">
+            <button class="back-btn" onclick="showMainPage()">Back</button>
+            <div class="content-wrapper">
+                <div class="content">
+                    <img src="asset/money.webp" alt="Charity Image">
                     <p>The season of giving and thinking of others is never-ending. Why not give this charity a chance now?</p>
                 </div>
                 
@@ -161,10 +440,11 @@
         
         <div id="thank-you-page" class="thank-you">
             <h2>Thank You for Your Donation!</h2>
-            <p>Your contribution of ₹<span id="finalAmount">0</span> will help us make a difference.</p>
+            <p id="thank-you-message">Your contribution will help us make a difference.</p>
             <p>A confirmation email has been sent to <span id="userEmail"></span>.</p>
             <button onclick="returnToForm()" style="max-width: 200px; margin: 20px auto;">Make Another Donation</button>
         </div>
+    </div>
 
     <script>
         document.getElementById("amount").addEventListener("input", function() {
@@ -176,24 +456,100 @@
             }
             document.getElementById("donationAmount").innerText = amount;
         });
+        
+        document.getElementById("foodAmount").addEventListener("input", function() {
+            let amount = document.getElementById("foodAmount").value;
+            if(amount > 100000) {
+                alert("for donating " + amount + " contact authorities");
+                amount = 0;
+                document.getElementById("foodAmount").value = "";
+            }
+            document.getElementById("foodDonationAmount").innerText = amount;
+        });
 
         document.getElementById("donationForm").addEventListener("submit", function(e) {
             e.preventDefault();
             let amount = document.getElementById("amount").value;
             let email = document.getElementById("email").value;
             
-            document.getElementById("finalAmount").innerText = amount;
+            document.getElementById("thank-you-message").innerText = "Your contribution of ₹" + amount + " will help us make a difference.";
             document.getElementById("userEmail").innerText = email;
 
-            document.getElementById("donation-page").style.display = "none";
+            hideAllForms();
             document.getElementById("thank-you-page").style.display = "block";
         });
-        function returnToForm() {
+        
+        document.getElementById("clothesForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            let email = document.getElementById("clothesEmail").value;
+            
+            document.getElementById("thank-you-message").innerText = "Thank you for donating clothes. We'll arrange a pickup soon.";
+            document.getElementById("userEmail").innerText = email;
+
+            hideAllForms();
+            document.getElementById("thank-you-page").style.display = "block";
+        });
+        
+        document.getElementById("foodForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            let amount = document.getElementById("foodAmount").value;
+            let email = document.getElementById("foodEmail").value;
+            
+            document.getElementById("thank-you-message").innerText = "Your food donation of ₹" + amount + " will help feed many hungry children.";
+            document.getElementById("userEmail").innerText = email;
+
+            hideAllForms();
+            document.getElementById("thank-you-page").style.display = "block";
+        });
+        
+        document.getElementById("booksForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            let email = document.getElementById("booksEmail").value;
+            
+            document.getElementById("thank-you-message").innerText = "Thank you for donating books. We'll arrange a pickup soon.";
+            document.getElementById("userEmail").innerText = email;
+
+            hideAllForms();
+            document.getElementById("thank-you-page").style.display = "block";
+        });
+        
+        function showForm(formType) {
+            hideAllForms();
+            document.getElementById(formType + "-form").style.display = "block";
+        }
+        
+        function hideAllForms() {
+            document.getElementById("main-page").style.display = "none";
+            document.getElementById("clothes-form").style.display = "none";
+            document.getElementById("food-form").style.display = "none";
+            document.getElementById("books-form").style.display = "none";
+            document.getElementById("money-form").style.display = "none";
             document.getElementById("thank-you-page").style.display = "none";
-            document.getElementById("donation-page").style.display = "block";
+        }
+        
+        function showMainPage() {
+            hideAllForms();
+            document.getElementById("main-page").style.display = "block";
+        }
+        
+        function returnToForm() {
+            hideAllForms();
+            document.getElementById("main-page").style.display = "block";
             document.getElementById("donationForm").reset();
+            document.getElementById("clothesForm").reset();
+            document.getElementById("foodForm").reset();
+            document.getElementById("booksForm").reset();
             document.getElementById("donationAmount").innerText = "0";
-}
+            document.getElementById("foodDonationAmount").innerText = "0";
+            document.getElementById("clothes-upload-info").style.display = "none";
+            document.getElementById("books-upload-info").style.display = "none";
+        }
+        
+        function simulateFileUpload(type) {
+            setTimeout(function() {
+                document.getElementById(type + "-upload-info").style.display = "block";
+            }, 500);
+        }
     </script>
 </body>
 </html>
