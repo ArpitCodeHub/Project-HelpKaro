@@ -34,7 +34,6 @@ body{
     align-items: center;
     gap: 30px;
     padding: 10px 15px;
-    flex-wrap: wrap;
 }
 
 .img-content2{
@@ -169,6 +168,9 @@ body{
     .carousel{
         left:40px;
         width:85vw;
+    }
+    .content2-container{
+        flex-wrap: wrap;
     }
     .img-content2{
         height: 230px;
