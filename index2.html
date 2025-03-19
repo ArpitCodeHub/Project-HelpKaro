@@ -3,126 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HelpKaro - Donation Form</title>
     <style>
-        body {
-           
-            font-family: 'Poppins', sans-serif;
-            background-color: #0284c7;
-
-            text-align: center;
-            padding: 20px;
-        }
-        .container{
-            
-            background-color: #e0e7ed;
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            border-radius: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-self: auto;
-        }
-        .content{
-            width: 50%;
-            text-align: left;
-        }
-        .form-group{
-            background-color: #f9f5f5; 
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            text-align: center;
-
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        .form{
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
             max-width: 1000px;
             margin: 40px auto;
-            background-color: #e5cdcd;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(16, 1, 1, 0.08);
-            overflow: hidden;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .header h1 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .content-wrapper {
             display: flex;
-            flex-direction: column;
-
+            flex-wrap: wrap;
         }
-        #donationform{
-            width: 10px;
+        
+        .content {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
         }
-        .content>img{
+        
+        .content img {
             width: 100%;
             border-radius: 8px;
+            margin: 15px 0;
         }
-        input{
-            width: 90%;
+        
+        .form-container {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .form-group {
+            background-color: #f9f9f9;
             padding: 10px;
-            margin: 10px ;
+            margin-bottom: 15px;
             border-radius: 5px;
-            border: 1px solid grey;
-
         }
-        button{
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 4px;
             cursor: pointer;
-            width: 50%;
-            padding: 10px;
-            margin: 10px ;
-            border-radius: 5px;
-            border: 1px solid grey;
+            font-size: 16px;
+            margin-top: 10px;
         }
+        
         button:hover {
-            background-color: #0056b3;
+            background-color: #45a049;
+        }
+        
+        .qr-code {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .qr-code img {
+            max-width: 150px;
+        }
+        
+        .qr-code p {
+            margin-top: 10px;
+            color: #666;
         }
 
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .thank-you h2 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="content">
-            <h1><img src="" alt="">HelpKaro</h1>
-            <h2>Donate Us</h2>
-            <p><i>Donate us for a Better Tomorrow !!</i></p>
-            <img src="" alt="Charity Image">
-            <p>The season of giving and thinking of others is never-ending. Why not give this charity a chance now?</p>
+        <div class="header">
+            <h1>HelpKaro</h1>
+            <p>Donate us for a Better Tomorrow !!</p>
         </div>
+        
+        <div id="donation-page">
+            <div class="content-wrapper">
+                <div class="content">
+                    <img src="asset/donationpage.webp" alt="Charity Image">
+                    <p>The season of giving and thinking of others is never-ending. Why not give this charity a chance now?</p>
+                </div>
+                
+                <div class="form-container">
+                    <h3>Payment Details</h3>
+                    <form id="donationForm">
+                        <div class="form-group">
+                            <input type="number" id="amount" placeholder="₹ Enter Amount" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="pan" placeholder="PAN Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="mobile" placeholder="Mobile" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="company" placeholder="Company (Optional)">
+                        </div>
+                        <button type="submit">Donate ₹ <span id="donationAmount">0</span></button>
+                    </form>
+                    
+                    <div class="qr-code">
+                        <img src="asset/upi.jpg" alt="QR Code">
+                        <p>Scan to donate directly</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form">
-            <h3>Payment Details</h3>
+        
+        <div id="thank-you-page" class="thank-you">
+            <h2>Thank You for Your Donation!</h2>
+            <p>Your contribution of ₹<span id="finalAmount">0</span> will help us make a difference.</p>
+            <p>A confirmation email has been sent to <span id="userEmail"></span>.</p>
+            <button onclick="returnToForm()" style="max-width: 200px; margin: 20px auto;">Make Another Donation</button>
         </div>
-            <form id="donationForm">
-             <div class="form-group">
-                <input type="number" id="amount" placeholder="₹ Enter Amount" >
-             </div>
-             <div class="form-group">
-                <input type="text" id="pan" placeholder="PAN Number" >
-            </div>
-            <div class="form-group">
-            
-                <input type="email" id="email" placeholder="Email" >
-            </div>
-            <div class="form-group">
-                <input type="tel" id="mobile" placeholder="Mobile" >
-            </div>
-            <div class="form-group">
-
-                <input type="text" id="company" placeholder="Company (Optional)">
-            </div>
-           
-                <button type="submit">Donate ₹ <span id="donationAmount">0</span></button>
-            
-            </form>
 
     <script>
-        document.getElementById("donationForm").addEventListener("input", ()=>{
-            let amount = document.getElementById("amount").value ;
-            if(amount>100000){
-                alert(`for donating ${amount} contact authorities`);
-                amount=0;
+        document.getElementById("amount").addEventListener("input", function() {
+            let amount = document.getElementById("amount").value;
+            if(amount > 100000) {
+                alert("for donating " + amount + " contact authorities");
+                amount = 0;
+                document.getElementById("amount").value = "";
             }
             document.getElementById("donationAmount").innerText = amount;
         });
+
+        document.getElementById("donationForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            let amount = document.getElementById("amount").value;
+            let email = document.getElementById("email").value;
+            
+            document.getElementById("finalAmount").innerText = amount;
+            document.getElementById("userEmail").innerText = email;
+
+            document.getElementById("donation-page").style.display = "none";
+            document.getElementById("thank-you-page").style.display = "block";
+        });
+        function returnToForm() {
+            document.getElementById("thank-you-page").style.display = "none";
+            document.getElementById("donation-page").style.display = "block";
+            document.getElementById("donationForm").reset();
+            document.getElementById("donationAmount").innerText = "0";
+}
     </script>
 </body>
 </html>
