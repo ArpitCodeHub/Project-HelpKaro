@@ -9,6 +9,159 @@ body{
     display: flex;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 110, 255, 0.1);
+}
+
+.nav-left, .nav-center, .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left {
+  width: 25%;
+  padding-left: 15px;
+}
+
+.nav-center {
+  width: 50%;
+  justify-content: center;
+}
+
+.nav-right {
+  width: 25%;
+  justify-content: flex-end;
+  padding-right: 15px;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin: 0 0.8rem;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-left a:first-child {
+  margin-left: 0;
+}
+
+.nav-left a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0284c7;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.nav-left a:hover {
+  color: #0284c7;
+}
+
+.nav-left a:hover:after {
+  width: 100%;
+  opacity: 1;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 1rem;
+  background-color: rgba(2, 132, 199, 0.03);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.logo-container:hover {
+  background-color: rgba(2, 132, 199, 0.07);
+  transform: translateY(-1px);
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.8rem;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-name {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: #334155;
+  letter-spacing: -0.2px;
+}
+
+.brand-name span {
+  color: #0284c7;
+}
+
+.nav-right button {
+  border: none;
+  padding: 0.65rem 1.4rem;
+  margin: 0 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.2px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-right button:last-child {
+  margin-right: 0;
+}
+
+.btn-request {
+  color: #0284c7;
+  background-color: rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.1) !important;
+}
+
+.btn-request:hover {
+  background-color: rgba(2, 132, 199, 0.15);
+  transform: translateY(-2px);
+}
+
+.btn-donate {
+  color: white;
+  background-color: #0284c7;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.btn-donate:hover {
+  background-color: #0369a1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);
+}
+
+
 .contact-us{
     background-color: #0284c7;
     display: flex;
@@ -328,6 +481,30 @@ body{
 
 .faq-question.active .toggle-icon {
     transform: rotate(180deg);
+}
+
+.footer {
+  background-color:  #0284c7;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.social-links a {
+  color: #ffffff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.social-links a:hover {
+  color: #ffd700;
 }
 
   
