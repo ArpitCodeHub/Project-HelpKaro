@@ -256,7 +256,7 @@
         
         <div class="nav-right">
             <button class="btn-request">Request</button>
-            <button class="btn-donate">Donate</button>
+            <button class="btn-donate" onclick="openNewPage()" >Donate</button>
         </div>
     </nav>
     <br>
@@ -330,6 +330,9 @@
     <script>
         const track = document.querySelector('.carousel-track');
         track.innerHTML += track.innerHTML; 
+        function openNewPage() {
+            window.location.href = "index2.html";
+        }
     </script>
 
     <footer class="footer">
