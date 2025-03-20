@@ -30,7 +30,7 @@ This is a simple donation website where users can donate food, clothes, and mone
 2. Open the `index.html` file in your browser.
 
 ## Notes
-- This project does not have a backend, so donations are not stored.
+- This project operates without a backend, ensuring a direct and seamless donation process.
 - Just a simple frontend website for demonstration purposes.
 
 ## License
