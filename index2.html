@@ -673,7 +673,7 @@
     
     document.getElementById("foodAmount").addEventListener("input", function() {
       let amount = document.getElementById("foodAmount").value;
-      if(amount > 100000) {
+      if(amount > 1000000) {
         alert("for donating " + amount + " contact authorities");
         amount = 0;
         document.getElementById("foodAmount").value = "";
