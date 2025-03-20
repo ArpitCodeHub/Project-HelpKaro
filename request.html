@@ -557,7 +557,7 @@
             <div class="form-group">
               <textarea id="foodMessage" placeholder="Message (Optional)" rows="2"></textarea>
             </div>
-            
+            <button type="submit">Request</button>
           </form>
           
           
@@ -634,122 +634,131 @@
     
     <div id="thank-you-page" class="thank-you">
       <h2>Thank You, we'll contact you as soon as possible!</h2>
-     
+      <p id="thank-you-message">Your contribution will help us make a difference.</p>
       <p>A confirmation email has been sent to <span id="userEmail"></span>.</p>
       <button onclick="returnToForm()" style="max-width: 200px; margin: 20px auto;">Make Another Request</button>
     </div>
-  </div>
 
   <script>
     document.getElementById("amount").addEventListener("input", function() {
-      let amount = document.getElementById("amount").value;
-      if(amount > 100000) {
-        alert("for donating " + amount + " contact authorities");
-        amount = 0;
-        document.getElementById("amount").value = "";
-      }
-      document.getElementById("donationAmount").innerText = amount;
-    });
-    
-    document.getElementById("foodAmount").addEventListener("input", function() {
-      let amount = document.getElementById("foodAmount").value;
-      if(amount > 100000) {
-        alert("for donating " + amount + " contact authorities");
-        amount = 0;
-        document.getElementById("foodAmount").value = "";
-      }
-      document.getElementById("foodDonationAmount").innerText = amount;
-    });
+  let amount = document.getElementById("amount").value;
+  if (amount > 100000) {
+    alert("For donating " + amount + ", contact authorities.");
+    amount = 0;
+    document.getElementById("amount").value = "";
+  }
+  document.getElementById("donationAmount").innerText = amount;
+});
 
-    document.getElementById("donationForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      let amount = document.getElementById("amount").value;
-      let email = document.getElementById("email").value;
-      
-      document.getElementById("thank-you-message").innerText = "Your contribution of ₹" + amount + " will help us make a difference.";
-      document.getElementById("userEmail").innerText = email;
+document.getElementById("foodAmount").addEventListener("input", function() {
+  let amount = document.getElementById("foodAmount").value;
+  if (amount > 100000) {
+    alert("For donating " + amount + ", contact authorities.");
+    amount = 0;
+    document.getElementById("foodAmount").value = "";
+  }
+  document.getElementById("foodDonationAmount").innerText = amount;
+});
 
-      hideAllForms();
-      document.getElementById("thank-you-page").style.display = "block";
-    });
-    
-    document.getElementById("clothesForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      let email = document.getElementById("clothesEmail").value;
-      
-      document.getElementById("thank-you-message").innerText = "Thank you for donating clothes. We'll arrange a pickup soon.";
-      document.getElementById("userEmail").innerText = email;
+// Handle Donation Form Submission
+document.getElementById("donationForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  let amount = document.getElementById("amount").value;
+  let email = document.getElementById("email").value;
 
-      hideAllForms();
-      document.getElementById("thank-you-page").style.display = "block";
-    });
-    
-    document.getElementById("foodForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      let amount = document.getElementById("foodAmount").value;
-      let email = document.getElementById("foodEmail").value;
-      
-      document.getElementById("thank-you-message").innerText = "Your food donation of ₹" + amount + " will help feed many hungry children.";
-      document.getElementById("userEmail").innerText = email;
+  document.getElementById("thank-you-message").innerText = "Your request of ₹" + amount + " will be considered.";
+  document.getElementById("userEmail").innerText = email;
 
-      hideAllForms();
-      document.getElementById("thank-you-page").style.display = "block";
-    });
-    
-    document.getElementById("booksForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      let email = document.getElementById("booksEmail").value;
-      
-      document.getElementById("thank-you-message").innerText = "Thank you for donating books. We'll arrange a pickup soon.";
-      document.getElementById("userEmail").innerText = email;
+  hideAllForms();
+  document.getElementById("thank-you-page").style.display = "block";
+});
 
-      hideAllForms();
-      document.getElementById("thank-you-page").style.display = "block";
-    });
-    
-    function showForm(formType) {
-      hideAllForms();
-      document.getElementById(formType + "-form").style.display = "block";
-    }
-    
-    function hideAllForms() {
-      document.getElementById("main-page").style.display = "none";
-      document.getElementById("clothes-form").style.display = "none";
-      document.getElementById("food-form").style.display = "none";
-      document.getElementById("books-form").style.display = "none";
-      document.getElementById("money-form").style.display = "none";
-      document.getElementById("thank-you-page").style.display = "none";
-    }
-    
-    function showMainPage() {
-      hideAllForms();
-      document.getElementById("main-page").style.display = "block";
-    }
-    
-    function returnToForm() {
-      hideAllForms();
-      document.getElementById("main-page").style.display = "block";
-      document.getElementById("donationForm").reset();
-      document.getElementById("clothesForm").reset();
-      document.getElementById("foodForm").reset();
-      document.getElementById("booksForm").reset();
-      document.getElementById("donationAmount").innerText = "0";
-      document.getElementById("foodDonationAmount").innerText = "0";
-      document.getElementById("clothes-upload-info").style.display = "none";
-      document.getElementById("books-upload-info").style.display = "none";
-    }
-    
-    function simulateFileUpload(type) {
-      setTimeout(function() {
-        document.getElementById(type + "-upload-info").style.display = "block";
-      }, 500);
-    }
-    
-   
-    function openNewPage() {
-      
-      window.scrollTo(0, document.querySelector(".container").offsetTop);
-    }
+// Handle Clothes Form Submission
+document.getElementById("clothesForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  let email = document.getElementById("clothesEmail").value;
+
+  document.getElementById("thank-you-message").innerText = "Thank you for requesting clothes. We'll contact you soon.";
+  document.getElementById("userEmail").innerText = email;
+
+  hideAllForms();
+  document.getElementById("thank-you-page").style.display = "block";
+});
+
+// Handle Food Form Submission
+document.getElementById("foodForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // Get form values
+  let amount = document.getElementById("foodAmount").value;
+  let name = document.getElementById("foodName").value;
+  let email = document.getElementById("foodEmail").value;
+  let mobile = document.getElementById("foodMobile").value;
+  let message = document.getElementById("foodMessage").value;
+
+  // Set thank-you message
+  document.getElementById("thank-you-message").innerText = 
+    `Thank you, ${name}! Your request for food for ${amount} people has been received. We'll contact you soon at ${email} or ${mobile}.`;
+  document.getElementById("userEmail").innerText = email;
+
+  // Hide all forms and show thank-you page
+  hideAllForms();
+  document.getElementById("thank-you-page").style.display = "block";
+});
+
+// Handle Books Form Submission
+document.getElementById("booksForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  let email = document.getElementById("booksEmail").value;
+
+  document.getElementById("thank-you-message").innerText = "Thank you for requesting books. We'll contact you soon.";
+  document.getElementById("userEmail").innerText = email;
+
+  hideAllForms();
+  document.getElementById("thank-you-page").style.display = "block";
+});
+
+function showForm(formType) {
+  hideAllForms();
+  document.getElementById(formType + "-form").style.display = "block";
+}
+
+function hideAllForms() {
+  document.getElementById("main-page").style.display = "none";
+  document.getElementById("clothes-form").style.display = "none";
+  document.getElementById("food-form").style.display = "none";
+  document.getElementById("books-form").style.display = "none";
+  document.getElementById("money-form").style.display = "none";
+  document.getElementById("thank-you-page").style.display = "none";
+}
+
+function showMainPage() {
+  hideAllForms();
+  document.getElementById("main-page").style.display = "block";
+}
+
+function returnToForm() {
+  hideAllForms();
+  document.getElementById("main-page").style.display = "block";
+  document.getElementById("donationForm").reset();
+  document.getElementById("clothesForm").reset();
+  document.getElementById("foodForm").reset();
+  document.getElementById("booksForm").reset();
+  document.getElementById("donationAmount").innerText = "0";
+  document.getElementById("foodDonationAmount").innerText = "0";
+  document.getElementById("clothes-upload-info").style.display = "none";
+  document.getElementById("books-upload-info").style.display = "none";
+}
+
+function simulateFileUpload(type) {
+  setTimeout(function() {
+    document.getElementById(type + "-upload-info").style.display = "block";
+  }, 500);
+}
+
+function openNewPage() {
+  window.scrollTo(0, document.querySelector(".container").offsetTop);
+}
   </script>
   
 </body>
