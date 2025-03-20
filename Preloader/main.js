@@ -10,6 +10,6 @@ window.addEventListener('load', () => {
         setTimeout(() => {
             preloader.style.display = "none";
             window.location.href = "../home.html";
-        }, 2000);
+        }, 2500);
     }, 3000);
 });
