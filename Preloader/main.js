@@ -11,5 +11,5 @@ window.addEventListener('load', () => {
             preloader.style.display = "none";
             window.location.href = "../home.html";
         }, 2000);
-    }, 4000);
+    }, 3000);
 });
